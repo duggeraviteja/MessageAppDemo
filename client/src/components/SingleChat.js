@@ -111,7 +111,7 @@ function SingleChat({ fetchAgain, setfetchAgain }) {
                 <div
                   className="modal fade m24"
                   id="exampleModal"
-                  tabindex="-1"
+                  tabIndex="-1"
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
@@ -182,10 +182,6 @@ function SingleChat({ fetchAgain, setfetchAgain }) {
               </div>
             ) : (
               <div>
-                {/* <UpdateGroupChatModel fetchAgain = {fetchAgain} 
-                  setfetchAgain = {setfetchAgain} 
-                  fetchMessages = { fetchMessages}
-                  /> */}
               </div>
             )}
           </div>
@@ -233,14 +229,14 @@ function SingleChat({ fetchAgain, setfetchAgain }) {
 
 
 
-<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="text-center" id="">Send Message</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div className="modal fade" id="exampleModal2" tabIndex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
+  <div className="modal-dialog">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h5 className="text-center" id="">Send Message</h5>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div className="modal-body">
       <div className="container ">
           <div>
             <div className="">
@@ -289,7 +285,7 @@ function SingleChat({ fetchAgain, setfetchAgain }) {
 
 
 <div className="sendMessageInputBox  mb-1" >
-<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+<button type="button" className="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
   Compose Message
 </button>
 </div>

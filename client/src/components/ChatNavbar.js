@@ -19,12 +19,16 @@ function ChatNavBar() {
           Authorization: "Bearer " + localStorage.getItem("jwt"),
         },
       };
-      const { data } = await axios.post(`http://localhost:5000/accessChat`, { userId }, config);
+      const { data } = await axios.post(
+        `http://localhost:5000/accessChat`,
+        { userId },
+        config
+      );
       setSelectedChat(data);
 
       if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
     } catch (error) {
-   return   toast.error(error);
+      return toast.error(error);
     }
   };
 
@@ -37,9 +41,11 @@ function ChatNavBar() {
       },
     };
 
-    const { data } = await axios.get(`http://localhost:5000/allUsers?search=${search}`, config);
+    const { data } = await axios.get(
+      `http://localhost:5000/allUsers?search=${search}`,
+      config
+    );
     setData(data);
-    
   };
 
   const searcModel = () => {
@@ -57,7 +63,7 @@ function ChatNavBar() {
         className="offcanvas offcanvas-start"
         data-bs-scroll="true"
         data-bs-backdrop="false"
-        tabindex="-1"
+        tabIndex="-1"
         id="offcanvasScrolling"
         aria-labelledby="offcanvasScrollingLabel"
       >
@@ -77,7 +83,6 @@ function ChatNavBar() {
                 className="btn btn-warning  ms-1 mt-1 mb-1"
                 onClick={searchUser}
               >
-           
                 Search
               </button>
             </form>
@@ -91,12 +96,11 @@ function ChatNavBar() {
           ></button>
         </div>
         <div className="offcanvas-body">
-          {
-          data?.map((user, k) => {
+          {data?.map((user, k) => {
             return (
-              <div key={user._id}>
-                <div className="d-flex m-2 p-1 userlist">
-                  <img
+              <div key={user._id} >
+                <div className="d-flex m-2 p-1 userlist" >
+                  <img 
                     src={user.userImage}
                     alt="User"
                     className="rounded-circle"
@@ -105,7 +109,7 @@ function ChatNavBar() {
                     border="2px"
                   />
                   <div className="row m-2 ">
-                    <button
+                    <button key='09'
                       className="btn "
                       onClick={() => {
                         accessChat(user._id);
@@ -128,8 +132,7 @@ function ChatNavBar() {
     <div>
       <nav className="navbar navbar-light bg-light">
         <div className="container-fluid">
-          <span key={1234}> {searcModel()} </span>
-         
+          <span> {searcModel()} </span>
         </div>
       </nav>
     </div>
